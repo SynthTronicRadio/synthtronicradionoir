@@ -10,63 +10,45 @@ export default function PlaylistScreen() {
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <style>
-        body {
+        * {
           margin: 0;
-          padding: 10px;
-          height: 100vh;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        html, body {
+          height: 100%;
+          width: 100%;
           background-color: black;
-          display: flex;
-          justify-content: center;
-          align-items: flex-start;
           overflow: hidden;
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
         .container {
-          width: 95%;
-          max-width: 600px;
-          height: auto;
+          width: 100%;
+          height: 100vh;
           display: flex;
           flex-direction: column;
-          justify-content: flex-start;
-          align-items: center;
-          padding-top: 20px;
-        }
-        .playlist-header {
-          color: white;
-          font-size: 18px;
-          font-weight: bold;
-          margin-bottom: 15px;
-          text-align: center;
+          background-color: black;
         }
         iframe {
           width: 100%;
-          height: 400px;
+          height: 100%;
           border: none;
-          border-radius: 8px;
-          background-color: #1a1a1a;
-        }
-        .playlist-info {
-          color: #888;
-          font-size: 12px;
-          margin-top: 10px;
-          text-align: center;
+          background-color: black;
+          flex: 1;
         }
       </style>
     </head>
     <body>
       <div class="container">
-        <div class="playlist-header">Recently Played Tracks</div>
         <!-- RCAST.NET - START EMBEDDED PLAYER --> 
-        <iframe width="100%" height="400" src="https://players.rcast.net/playlisthistory/69431" frameborder="0" scrolling="yes" allow="autoplay"></iframe> 
+        <iframe width="100%" height="100%" src="https://players.rcast.net/playlisthistory/69431" frameborder="0" scrolling="yes" allow="autoplay"></iframe> 
         <div style="overflow:hidden; height:0px; width:0px;"><a href="https://www.rcast.net" title="Internet Radio Hosting">RCAST.NET</a></div>
         <!-- RCAST.NET - END EMBEDDED PLAYER -->
-        <div class="playlist-info">Last 10 tracks played on air</div>
       </div>
     </body>
     </html>
   `;
 
-  console.log('Playlist screen rendered with smaller list format for 10 recent tracks');
+  console.log('Playlist screen rendered with expanded code box reaching tab banner');
 
   return (
     <View style={styles.container}>

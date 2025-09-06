@@ -6,11 +6,11 @@
     "slug": "synthtronicradionoir",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/17d9342d-df91-4fbf-b206-dfc352180218.png",
+    "icon": "./assets/images/ca499bca-7776-4ec4-a740-137901f37fb3.png",
     "userInterfaceStyle": "dark",
     "newArchEnabled": false,
     "splash": {
-      "image": "./assets/images/17d9342d-df91-4fbf-b206-dfc352180218.png",
+      "image": "./assets/images/ca499bca-7776-4ec4-a740-137901f37fb3.png",
       "resizeMode": "contain",
       "backgroundColor": "#000000"
     },
@@ -21,15 +21,15 @@
         "ITSAppUsesNonExemptEncryption": false
       },
       "icon": {
-        "image": "./assets/images/17d9342d-df91-4fbf-b206-dfc352180218.png",
+        "image": "./assets/images/ca499bca-7776-4ec4-a740-137901f37fb3.png",
         "padding": "10%"
       }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/17d9342d-df91-4fbf-b206-dfc352180218.png",
+        "foregroundImage": "./assets/images/ca499bca-7776-4ec4-a740-137901f37fb3.png",
         "backgroundColor": "#000000",
-        "monochromeImage": "./assets/images/17d9342d-df91-4fbf-b206-dfc352180218.png"
+        "monochromeImage": "./assets/images/ca499bca-7776-4ec4-a740-137901f37fb3.png"
       },
       "package": "com.synthtronicradio.synthtronicradionoir",
       "compileSdkVersion": 34,
@@ -37,7 +37,7 @@
       "buildToolsVersion": "34.0.0"
     },
     "web": {
-      "favicon": "./assets/images/17d9342d-df91-4fbf-b206-dfc352180218.png",
+      "favicon": "./assets/images/ca499bca-7776-4ec4-a740-137901f37fb3.png",
       "bundler": "metro"
     },
     "plugins": [

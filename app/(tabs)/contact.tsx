@@ -1,14 +1,16 @@
 
 import React from 'react';
-import { View, Image, StyleSheet } from 'react-native';
+import { View, Image, StyleSheet, Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
 
 export default function ContactScreen() {
-  console.log('Contact screen rendered with black background and centered image');
+  console.log('Contact screen rendered with new SynthTronic Radio Noir image');
 
   return (
     <View style={styles.container}>
       <Image
-        source={require('../../assets/images/995a9a2b-5b10-4549-aaff-88cf5d0185ac.jpeg')}
+        source={require('../../assets/images/07aab9fc-1fad-42d2-942c-9f1894ba0d10.jpeg')}
         style={styles.image}
         resizeMode="contain"
       />
@@ -24,7 +26,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   image: {
-    width: '90%',
-    height: '90%',
+    width: width * 0.9,
+    height: height * 0.9,
   },
 });

@@ -1,21 +1,18 @@
 
-import { View, Text, ScrollView, Dimensions } from 'react-native';
-import { commonStyles, colors } from '../../styles/commonStyles';
-import { useState } from 'react';
+import { View, Dimensions } from 'react-native';
+import { commonStyles } from '../../styles/commonStyles';
 import { WebView } from 'react-native-webview';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function NowPlayingScreen() {
-  const [listeners, setListeners] = useState(1247);
   const insets = useSafeAreaInsets();
   const { width, height } = Dimensions.get('window');
   
-  // Calculate available height for the player
-  const availableHeight = height - insets.top - insets.bottom - 100; // Account for tab bar and padding
-  const playerHeight = Math.min(availableHeight * 0.6, 500); // Use 60% of available height, max 500px
+  // Calculate available height for the player (full screen minus safe areas and tab bar)
+  const availableHeight = height - insets.top - insets.bottom - 80; // Account for tab bar
 
   console.log('Now Playing screen rendered with embedded radio player');
-  console.log('Screen dimensions:', { width, height, playerHeight });
+  console.log('Screen dimensions:', { width, height, availableHeight });
 
   // HTML content for the embedded player
   const htmlContent = `
@@ -68,24 +65,14 @@ export default function NowPlayingScreen() {
 
   return (
     <View style={[commonStyles.container, { paddingTop: insets.top }]}>
-      {/* Header */}
-      <View style={[commonStyles.section, { marginTop: 20, marginBottom: 20 }]}>
-        <Text style={commonStyles.title}>Now Playing</Text>
-        <Text style={commonStyles.textSecondary}>
-          {listeners.toLocaleString()} listeners • Live
-        </Text>
-      </View>
-
-      {/* Embedded Radio Player - Takes most of the screen */}
+      {/* Embedded Radio Player - Full screen */}
       <View style={[
         commonStyles.card, 
         { 
-          marginHorizontal: 20,
+          margin: 20,
           padding: 0, 
           overflow: 'hidden',
-          flex: 1,
-          maxHeight: playerHeight,
-          minHeight: 300,
+          height: availableHeight - 40, // Account for margins
         }
       ]}>
         <WebView
@@ -105,67 +92,6 @@ export default function NowPlayingScreen() {
           onMessage={(event) => console.log('Radio player message:', event.nativeEvent.data)}
         />
       </View>
-
-      {/* Bottom section with live indicator and station info */}
-      <ScrollView 
-        style={{ flex: 0, maxHeight: 200 }} 
-        contentContainerStyle={{ paddingHorizontal: 20, paddingBottom: 20 }}
-        showsVerticalScrollIndicator={false}
-      >
-        {/* Live indicator */}
-        <View style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'center',
-          marginTop: 16,
-          marginBottom: 16,
-          paddingHorizontal: 16,
-          paddingVertical: 8,
-          backgroundColor: colors.error,
-          borderRadius: 20,
-          alignSelf: 'center',
-        }}>
-          <View style={{
-            width: 8,
-            height: 8,
-            backgroundColor: 'white',
-            borderRadius: 4,
-            marginRight: 8,
-          }} />
-          <Text style={{ color: 'white', fontSize: 14, fontWeight: '600' }}>
-            LIVE RADIO
-          </Text>
-        </View>
-
-        {/* Compact Station Info */}
-        <View style={[commonStyles.card, { padding: 12 }]}>
-          <Text style={[commonStyles.subtitle, { marginBottom: 8, fontSize: 18 }]}>SynthTronic Radio Noir</Text>
-          
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 4 }}>
-            <Text style={[commonStyles.textSecondary, { fontSize: 12 }]}>Quality:</Text>
-            <Text style={[commonStyles.text, { fontSize: 12, marginBottom: 0 }]}>High Quality</Text>
-          </View>
-          
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 4 }}>
-            <Text style={[commonStyles.textSecondary, { fontSize: 12 }]}>Genre:</Text>
-            <Text style={[commonStyles.text, { fontSize: 12, marginBottom: 0 }]}>Electronic / Synthwave</Text>
-          </View>
-          
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-            <Text style={[commonStyles.textSecondary, { fontSize: 12 }]}>Status:</Text>
-            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-              <View style={{
-                width: 6,
-                height: 6,
-                backgroundColor: colors.success,
-                borderRadius: 3,
-                marginRight: 6,
-              }} />
-              <Text style={[commonStyles.text, { fontSize: 12, marginBottom: 0 }]}>Live</Text>
-            </View>
-          </View>
-        </View>
-      </ScrollView>
     </View>
   );
 }

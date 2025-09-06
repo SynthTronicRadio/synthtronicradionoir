@@ -5,7 +5,7 @@ import { WebView } from 'react-native-webview';
 export default function NowPlayingScreen() {
   const { width, height } = Dimensions.get('window');
   
-  console.log('Now Playing screen rendered with full-screen embedded radio player');
+  console.log('Now Playing screen rendered with embedded radio player moved down 20%');
   console.log('Screen dimensions:', { width, height });
 
   // HTML content for the embedded player - full screen
@@ -71,12 +71,15 @@ export default function NowPlayingScreen() {
       width: '100%',
       height: '100%',
     }}>
+      <View style={{
+        height: '20%',
+        width: '100%',
+      }} />
       <WebView
         source={{ html: htmlContent }}
         style={{
           flex: 1,
           width: '100%',
-          height: '100%',
           backgroundColor: 'transparent',
         }}
         javaScriptEnabled={true}
@@ -84,7 +87,7 @@ export default function NowPlayingScreen() {
         allowsInlineMediaPlayback={true}
         mediaPlaybackRequiresUserAction={false}
         mixedContentMode="compatibility"
-        onLoad={() => console.log('Full-screen radio player loaded successfully')}
+        onLoad={() => console.log('Radio player loaded successfully - moved down 20%')}
         onError={(error) => console.log('Radio player error:', error)}
         onMessage={(event) => console.log('Radio player message:', event.nativeEvent.data)}
       />

@@ -9,7 +9,7 @@ export default function TabLayout() {
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: colors.primary,
-        tabBarInactiveTintColor: colors.textSecondary,
+        tabBarInactiveTintColor: colors.text,
         tabBarStyle: {
           backgroundColor: colors.background,
           borderTopColor: colors.border,
@@ -28,27 +28,27 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
+          title: 'Now Playing',
           tabBarIcon: ({ color, size }) => (
-            <Icon name="home" size={size} color={color} />
+            <Icon name="musical-notes" size={size} color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="listen"
+        name="playlist"
         options={{
-          title: 'Listen Live',
+          title: 'Playlist',
           tabBarIcon: ({ color, size }) => (
-            <Icon name="radio" size={size} color={color} />
+            <Icon name="list" size={size} color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="schedule"
+        name="contact"
         options={{
-          title: 'Schedule',
+          title: 'Contact',
           tabBarIcon: ({ color, size }) => (
-            <Icon name="calendar" size={size} color={color} />
+            <Icon name="call" size={size} color={color} />
           ),
         }}
       />

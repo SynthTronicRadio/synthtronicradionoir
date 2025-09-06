@@ -8,12 +8,12 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: colors.primary,
+        tabBarActiveTintColor: colors.text,
         tabBarInactiveTintColor: colors.text,
         tabBarStyle: {
           backgroundColor: colors.background,
-          borderTopColor: colors.border,
-          borderTopWidth: 1,
+          borderTopColor: colors.background,
+          borderTopWidth: 0,
           paddingBottom: 8,
           paddingTop: 8,
           height: 80,
@@ -22,6 +22,7 @@ export default function TabLayout() {
           fontSize: 12,
           fontWeight: '600',
           marginTop: 4,
+          color: colors.text,
         },
       }}
     >
@@ -30,7 +31,7 @@ export default function TabLayout() {
         options={{
           title: 'Now Playing',
           tabBarIcon: ({ color, size }) => (
-            <Icon name="musical-notes" size={size} color={color} />
+            <Icon name="musical-notes" size={size} color={colors.text} />
           ),
         }}
       />
@@ -39,7 +40,7 @@ export default function TabLayout() {
         options={{
           title: 'Playlist',
           tabBarIcon: ({ color, size }) => (
-            <Icon name="list" size={size} color={color} />
+            <Icon name="list" size={size} color={colors.text} />
           ),
         }}
       />
@@ -48,7 +49,7 @@ export default function TabLayout() {
         options={{
           title: 'Contact',
           tabBarIcon: ({ color, size }) => (
-            <Icon name="mail" size={size} color={color} />
+            <Icon name="mail" size={size} color={colors.text} />
           ),
         }}
       />

@@ -5,9 +5,9 @@ export const colors = {
   primary: '#FF6B35',      // Radio Orange
   secondary: '#F7931E',    // Warm Orange
   accent: '#FFE66D',       // Bright Yellow
-  background: '#FFFFFF',   // Clean White
+  background: '#000000',   // Black Background
   backgroundAlt: '#F8F9FA', // Light Gray
-  text: '#2C3E50',         // Dark Gray
+  text: '#FFFFFF',         // White Text
   textSecondary: '#7F8C8D', // Medium Gray
   card: '#FFFFFF',         // White Cards
   border: '#E9ECEF',       // Light Border

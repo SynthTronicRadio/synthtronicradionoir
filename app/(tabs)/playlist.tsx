@@ -28,9 +28,13 @@ export default function PlaylistScreen() {
           flex-direction: column;
           background-color: black;
         }
+        .spacer {
+          height: 5vh;
+          background-color: black;
+        }
         iframe {
           width: 100%;
-          height: 100%;
+          height: calc(95vh);
           border: none;
           background-color: black;
           flex: 1;
@@ -39,6 +43,7 @@ export default function PlaylistScreen() {
     </head>
     <body>
       <div class="container">
+        <div class="spacer"></div>
         <!-- RCAST.NET - START EMBEDDED PLAYER --> 
         <iframe width="100%" height="100%" src="https://players.rcast.net/playlisthistory/69431" frameborder="0" scrolling="yes" allow="autoplay"></iframe> 
         <div style="overflow:hidden; height:0px; width:0px;"><a href="https://www.rcast.net" title="Internet Radio Hosting">RCAST.NET</a></div>
@@ -48,7 +53,7 @@ export default function PlaylistScreen() {
     </html>
   `;
 
-  console.log('Playlist screen rendered with expanded code box reaching tab banner');
+  console.log('Playlist screen rendered with embedded code moved down 5%');
 
   return (
     <View style={styles.container}>

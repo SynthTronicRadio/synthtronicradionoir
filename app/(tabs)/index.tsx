@@ -1,20 +1,14 @@
 
 import { View, Dimensions } from 'react-native';
-import { commonStyles } from '../../styles/commonStyles';
 import { WebView } from 'react-native-webview';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function NowPlayingScreen() {
-  const insets = useSafeAreaInsets();
   const { width, height } = Dimensions.get('window');
   
-  // Calculate available height for the player (full screen minus safe areas and tab bar)
-  const availableHeight = height - insets.top - insets.bottom - 80; // Account for tab bar
+  console.log('Now Playing screen rendered with full-screen embedded radio player');
+  console.log('Screen dimensions:', { width, height });
 
-  console.log('Now Playing screen rendered with embedded radio player');
-  console.log('Screen dimensions:', { width, height, availableHeight });
-
-  // HTML content for the embedded player
+  // HTML content for the embedded player - full screen
   const htmlContent = `
     <!DOCTYPE html>
     <html>
@@ -22,33 +16,41 @@ export default function NowPlayingScreen() {
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
       <style>
-        body {
+        * {
           margin: 0;
           padding: 0;
+          box-sizing: border-box;
+        }
+        html, body {
+          width: 100%;
+          height: 100%;
           background-color: transparent;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
           overflow: hidden;
         }
         .container {
-          width: 100%;
+          width: 100vw;
           height: 100vh;
           display: flex;
           flex-direction: column;
-          align-items: center;
-          justify-content: center;
+          align-items: stretch;
+          justify-content: stretch;
           padding: 0;
+          margin: 0;
         }
         iframe {
           width: 100%;
           height: 100%;
           border: none;
-          border-radius: 12px;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+          display: block;
         }
         .attribution {
           overflow: hidden;
           height: 0px;
           width: 0px;
+          position: absolute;
+          top: -9999px;
+          left: -9999px;
         }
       </style>
     </head>
@@ -64,34 +66,28 @@ export default function NowPlayingScreen() {
   `;
 
   return (
-    <View style={[commonStyles.container, { paddingTop: insets.top }]}>
-      {/* Embedded Radio Player - Full screen */}
-      <View style={[
-        commonStyles.card, 
-        { 
-          margin: 20,
-          padding: 0, 
-          overflow: 'hidden',
-          height: availableHeight - 40, // Account for margins
-        }
-      ]}>
-        <WebView
-          source={{ html: htmlContent }}
-          style={{
-            width: '100%',
-            height: '100%',
-            backgroundColor: 'transparent',
-          }}
-          javaScriptEnabled={true}
-          domStorageEnabled={true}
-          allowsInlineMediaPlayback={true}
-          mediaPlaybackRequiresUserAction={false}
-          mixedContentMode="compatibility"
-          onLoad={() => console.log('Radio player loaded successfully')}
-          onError={(error) => console.log('Radio player error:', error)}
-          onMessage={(event) => console.log('Radio player message:', event.nativeEvent.data)}
-        />
-      </View>
+    <View style={{
+      flex: 1,
+      width: '100%',
+      height: '100%',
+    }}>
+      <WebView
+        source={{ html: htmlContent }}
+        style={{
+          flex: 1,
+          width: '100%',
+          height: '100%',
+          backgroundColor: 'transparent',
+        }}
+        javaScriptEnabled={true}
+        domStorageEnabled={true}
+        allowsInlineMediaPlayback={true}
+        mediaPlaybackRequiresUserAction={false}
+        mixedContentMode="compatibility"
+        onLoad={() => console.log('Full-screen radio player loaded successfully')}
+        onError={(error) => console.log('Radio player error:', error)}
+        onMessage={(event) => console.log('Radio player message:', event.nativeEvent.data)}
+      />
     </View>
   );
 }

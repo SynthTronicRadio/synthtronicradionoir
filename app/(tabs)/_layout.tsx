@@ -53,6 +53,18 @@ export default function TabLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="listen"
+        options={{
+          href: null, // This hides the tab from the tab bar
+        }}
+      />
+      <Tabs.Screen
+        name="schedule"
+        options={{
+          href: null, // This hides the tab from the tab bar
+        }}
+      />
     </Tabs>
   );
 }

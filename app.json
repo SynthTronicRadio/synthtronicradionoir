@@ -2,14 +2,15 @@
 {
   "expo": {
     "name": "SynthTronic Radio Noir",
+    "displayName": "SynthTronic Radio Noir",
     "slug": "synthtronicradionoir",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/final_quest_240x240.png",
+    "icon": "./assets/images/cd319538-a7da-4eda-9d10-c96e36813021.png",
     "userInterfaceStyle": "dark",
     "newArchEnabled": false,
     "splash": {
-      "image": "./assets/images/final_quest_240x240.png",
+      "image": "./assets/images/cd319538-a7da-4eda-9d10-c96e36813021.png",
       "resizeMode": "contain",
       "backgroundColor": "#000000"
     },
@@ -22,7 +23,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/final_quest_240x240.png",
+        "foregroundImage": "./assets/images/cd319538-a7da-4eda-9d10-c96e36813021.png",
         "backgroundColor": "#000000"
       },
       "package": "com.synthtronicradio.synthtronicradionoir",
@@ -31,7 +32,7 @@
       "buildToolsVersion": "34.0.0"
     },
     "web": {
-      "favicon": "./assets/images/final_quest_240x240.png",
+      "favicon": "./assets/images/cd319538-a7da-4eda-9d10-c96e36813021.png",
       "bundler": "metro"
     },
     "plugins": [

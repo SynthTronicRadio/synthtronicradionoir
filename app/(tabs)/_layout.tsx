@@ -48,7 +48,7 @@ export default function TabLayout() {
         options={{
           title: 'Contact',
           tabBarIcon: ({ color, size }) => (
-            <Icon name="call" size={size} color={color} />
+            <Icon name="mail" size={size} color={color} />
           ),
         }}
       />

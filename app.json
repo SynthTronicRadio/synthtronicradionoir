@@ -1,16 +1,16 @@
 
 {
   "expo": {
-    "name": "SynthTronic Radio Noir",
+    "name": "synthtronicradionoir",
     "displayName": "SynthTronic Radio Noir",
     "slug": "synthtronicradionoir",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/cd319538-a7da-4eda-9d10-c96e36813021.png",
+    "icon": "./assets/images/17d9342d-df91-4fbf-b206-dfc352180218.png",
     "userInterfaceStyle": "dark",
     "newArchEnabled": false,
     "splash": {
-      "image": "./assets/images/cd319538-a7da-4eda-9d10-c96e36813021.png",
+      "image": "./assets/images/17d9342d-df91-4fbf-b206-dfc352180218.png",
       "resizeMode": "contain",
       "backgroundColor": "#000000"
     },
@@ -21,15 +21,15 @@
         "ITSAppUsesNonExemptEncryption": false
       },
       "icon": {
-        "image": "./assets/images/cd319538-a7da-4eda-9d10-c96e36813021.png",
+        "image": "./assets/images/17d9342d-df91-4fbf-b206-dfc352180218.png",
         "padding": "10%"
       }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/cd319538-a7da-4eda-9d10-c96e36813021.png",
+        "foregroundImage": "./assets/images/17d9342d-df91-4fbf-b206-dfc352180218.png",
         "backgroundColor": "#000000",
-        "monochromeImage": "./assets/images/cd319538-a7da-4eda-9d10-c96e36813021.png"
+        "monochromeImage": "./assets/images/17d9342d-df91-4fbf-b206-dfc352180218.png"
       },
       "package": "com.synthtronicradio.synthtronicradionoir",
       "compileSdkVersion": 34,
@@ -37,7 +37,7 @@
       "buildToolsVersion": "34.0.0"
     },
     "web": {
-      "favicon": "./assets/images/cd319538-a7da-4eda-9d10-c96e36813021.png",
+      "favicon": "./assets/images/17d9342d-df91-4fbf-b206-dfc352180218.png",
       "bundler": "metro"
     },
     "plugins": [

@@ -19,12 +19,17 @@
       "bundleIdentifier": "com.synthtronic.radionoir",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
+      },
+      "icon": {
+        "image": "./assets/images/cd319538-a7da-4eda-9d10-c96e36813021.png",
+        "padding": "10%"
       }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/cd319538-a7da-4eda-9d10-c96e36813021.png",
-        "backgroundColor": "#000000"
+        "backgroundColor": "#000000",
+        "monochromeImage": "./assets/images/cd319538-a7da-4eda-9d10-c96e36813021.png"
       },
       "package": "com.synthtronicradio.synthtronicradionoir",
       "compileSdkVersion": 34,

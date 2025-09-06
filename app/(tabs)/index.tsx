@@ -1,5 +1,5 @@
 
-import { View, Dimensions } from 'react-native';
+import { View, Dimensions, Image } from 'react-native';
 import { WebView } from 'react-native-webview';
 
 export default function NowPlayingScreen() {
@@ -70,11 +70,24 @@ export default function NowPlayingScreen() {
       flex: 1,
       width: '100%',
       height: '100%',
+      backgroundColor: '#000000',
     }}>
       <View style={{
         height: '20%',
         width: '100%',
-      }} />
+        backgroundColor: '#000000',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
+        <Image
+          source={require('../../assets/images/6180a282-f91d-4f7c-b401-387aeb6a4dcf.png')}
+          style={{
+            width: 120,
+            height: 120,
+            resizeMode: 'contain',
+          }}
+        />
+      </View>
       <WebView
         source={{ html: htmlContent }}
         style={{

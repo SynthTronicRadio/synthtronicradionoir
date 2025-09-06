@@ -29,12 +29,12 @@ export default function PlaylistScreen() {
           background-color: black;
         }
         .spacer {
-          height: 5vh;
+          height: 10vh;
           background-color: black;
         }
         iframe {
           width: 100%;
-          height: calc(95vh);
+          height: calc(90vh);
           border: none;
           background-color: black;
           flex: 1;
@@ -53,7 +53,7 @@ export default function PlaylistScreen() {
     </html>
   `;
 
-  console.log('Playlist screen rendered with embedded code moved down 5%');
+  console.log('Playlist screen rendered with playlist shrunk down 5%');
 
   return (
     <View style={styles.container}>

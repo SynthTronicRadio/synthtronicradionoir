@@ -7,7 +7,7 @@ import { colors } from '../../styles/commonStyles';
 const { width, height } = Dimensions.get('window');
 
 export default function ContactScreen() {
-  console.log('Contact screen rendered with original icon colors');
+  console.log('Contact screen rendered with YouTube button added');
 
   const handleSocialLink = async (url: string) => {
     try {
@@ -47,6 +47,13 @@ export default function ContactScreen() {
         >
           <Ionicons name="logo-facebook" size={40} color={colors.text} />
         </TouchableOpacity>
+        
+        <TouchableOpacity 
+          style={styles.socialButton}
+          onPress={() => handleSocialLink('https://www.youtube.com/@synthtronicradio')}
+        >
+          <Ionicons name="logo-youtube" size={40} color={colors.text} />
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -68,7 +75,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    width: '80%',
+    width: '90%',
     paddingHorizontal: 20,
   },
   socialButton: {
